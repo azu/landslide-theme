@@ -590,3 +590,36 @@ function main() {
         addRemoteWindowControls();
     })();
 }
+
+$(window).load(function () {
+
+    $(".line").each(function () {
+        var target = $(this);
+        var fontSize = parseInt(target.css("font-size"), 10);
+
+        var temp = $("<div/>").css({
+            "display":"none",
+            "font-family":target.css("font-family"),
+            "font-size":fontSize
+        }).text(target.text()).appendTo("body");
+
+        var targetWidth = target.width();
+        var tempWidth = temp.width();
+
+        while (tempWidth < targetWidth) {
+            fontSize *= (targetWidth / tempWidth);
+            temp.css("font-size", fontSize + "px");
+            tempWidth = temp.width();
+        }
+
+        while (tempWidth >= targetWidth) {
+            fontSize--;
+            temp.css("font-size", fontSize + "px");
+            tempWidth = temp.width();
+        }
+
+        target.css("font-size", fontSize + "px");
+        temp.remove();
+    });
+});
+
