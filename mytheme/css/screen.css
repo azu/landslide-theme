@@ -157,12 +157,13 @@ section img.align-left {
     margin-left: 0;
 }
 
+section h3 {
+    font-size: 22px;
+}
 a {
     color: inherit;
     display: inline-block;
-    text-decoration: none;
     line-height: 110%;
-    border-bottom: 2px solid #3f3f3f;
 }
 
 pre {

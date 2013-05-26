@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="utf-8">
     <title>{{ head_title }}</title>
 
@@ -40,7 +39,7 @@
             {{ slide.header }}
             {% endif %}
             {% if slide.content %}
-            <p>{{ slide.content }}</p>
+            {{ slide.content }}
             {% endif %}
             {% if slide.presenter_notes %}
             <aside class="notes">
@@ -74,25 +73,25 @@
         maxScale: 1.0,
         // Optional libraries used to extend on reveal.js
         dependencies: [
-            { src: 'lib/js/classList.js', condition: function (){
+            { src: 'theme/reveal.js/lib/js/classList.js', condition: function (){
                 return !document.body.classList;
             } },
-            { src: 'plugin/markdown/marked.js', condition: function (){
-                return !!document.querySelector('[data-markdown]');
-            } },
-            { src: 'plugin/markdown/markdown.js', condition: function (){
-                return !!document.querySelector('[data-markdown]');
-            } },
-            { src: 'plugin/highlight/highlight.js', async: true, callback: function (){
-                hljs.initHighlightingOnLoad();
-            } },
-            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function (){
-                return !!document.body.classList;
-            } },
-            { src: 'plugin/notes/notes.js', async: true, condition: function (){
+//            { src: 'theme/reveal.js/plugin/markdown/marked.js', condition: function (){
+//                return !!document.querySelector('[data-markdown]');
+//            } },
+//            { src: 'theme/reveal.js/plugin/markdown/markdown.js', condition: function (){
+//                return !!document.querySelector('[data-markdown]');
+//            } },
+//            { src: 'theme/reveal.js/plugin/highlight/highlight.js', async: true, callback: function (){
+//                hljs.initHighlightingOnLoad();
+//            } },
+            { src: 'theme/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function (){
                 return !!document.body.classList;
             } }
-            // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+//            { src: 'theme/reveal.js/plugin/notes/notes.js', async: true, condition: function (){
+//                return !!document.body.classList;
+//            } },
+//            { src: 'theme/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
             // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
     });
